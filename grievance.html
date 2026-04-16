@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievance - Kagwad.in</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-box {
+            width: 40px;
+            height: 40px;
+            background-color: #2563eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+            margin: 0 15px;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: #1e40af;
+        }
+
+        nav a::after {
+            content: " | ";
+            color: #d1d5db;
+            margin-left: 15px;
+            margin-right: -15px;
+        }
+
+        nav a:last-child::after {
+            content: "";
+            margin: 0;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        /* Update Date */
+        .update-date {
+            font-size: 14px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 8px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        /* Paragraph Styles */
+        p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* List Styles */
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f3f4f6;
+            border-top: 1px solid #e0e0e0;
+            padding: 30px 0;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                gap: 15px;
+                padding: 15px 10px;
+            }
+
+            nav {
+                gap: 0;
+                justify-content: flex-end;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                font-size: 12px;
+                padding: 4px 0;
+            }
+
+            nav a::after {
+                margin-left: 8px;
+                margin-right: -8px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .container {
+                margin: 10px auto;
+                padding: 20px 15px;
+                border-radius: 4px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 12px 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 11px;
+            }
+
+            nav a::after {
+                margin-left: 5px;
+                margin-right: -5px;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .container {
+                margin: 10px 10px;
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-box">K</div>
+                <span class="logo-text">kagwad.in</span>
+            </a>
+            <nav>
+                <a href="index.html">Privacy</a>
+                <a href="grievance.html">Grievance</a>
+                <a href="guidelines.html">Community Guidelines</a>
+                <a href="terms.html">Terms Of Service</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="update-date">Updated in February 2026</div>
+        
+        <h1>Grievance Redressal</h1>
+        
+        <p>
+            At Kagwad.in, we take your concerns and grievances seriously. We have established a comprehensive grievance redressal mechanism to address any issues or complaints you may have regarding our services or policies.
+        </p>
+
+        <h2>Introduction</h2>
+        <p>
+            Our grievance redressal system is designed to ensure that every complaint is heard, documented, and resolved fairly and transparently. We believe in maintaining open communication with our users and are committed to addressing any concerns you may have promptly and professionally.
+        </p>
+
+        <h2>Filing a Grievance</h2>
+        <p>
+            If you have any grievance or complaint, please submit it through our official channels. We encourage you to provide detailed information about your complaint including relevant dates, transactions, and any supporting documentation. Our team will review your grievance and respond within the specified timeframe. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <h2>Grievance Resolution Process</h2>
+        <p>
+            Our grievance resolution process follows a structured approach to ensure fairness and efficiency:
+        </p>
+        <ul>
+            <li>Initial review and acknowledgment of your grievance within 24 hours</li>
+            <li>Detailed investigation and verification of facts</li>
+            <li>Communication of resolution and outcome</li>
+            <li>Implementation of corrective measures if needed</li>
+            <li>Follow-up to ensure your satisfaction</li>
+        </ul>
+
+        <h2>Contact Information</h2>
+        <p>
+            You can reach our grievance redressal team through the following channels:
+        </p>
+        <ul>
+            <li>Email: grievance@kagwad.in</li>
+            <li>Phone: +91-XXXX-XXXX-XXXX</li>
+            <li>Address: Kagwad.in Grievance Cell, Bangalore, India</li>
+        </ul>
+
+        <h2>Response Timeline</h2>
+        <p>
+            We are committed to responding to all grievances within the following timelines:
+        </p>
+        <ul>
+            <li>Acknowledgment: Within 24 hours of receipt</li>
+            <li>Initial review: Within 7 days</li>
+            <li>Final resolution: Within 30 days</li>
+        </ul>
+
+        <h2>Escalation</h2>
+        <p>
+            If you are not satisfied with the resolution provided, you have the right to escalate your grievance to our senior management team. Please provide your original grievance reference number and details of why you believe further review is necessary. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <h2>Confidentiality</h2>
+        <p>
+            All grievances are treated with utmost confidentiality. We respect your privacy and will not share your complaint details with unauthorized parties. Your identity and complaint information are protected throughout the resolution process. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
+        </p>
+
+        <h2>Your Rights</h2>
+        <p>
+            As a user of Kagwad.in, you have the right to file a grievance without any fear of retaliation or negative consequences. We encourage open feedback and consider all complaints as opportunities to improve our services and policies.
+        </p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Kagwad.in. All rights reserved.</p>
+            <p>
+                <a href="index.html">Privacy</a> | 
+                <a href="grievance.html">Grievance</a> | 
+                <a href="guidelines.html">Community Guidelines</a> | 
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
